@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     font-family: "Helvetica", sans-serif;
-    box-sizing: border-box;
 }
 
 main {
@@ -16,28 +15,26 @@ main {
     flex-direction: column;
 }
 
-/** form **/
-
 input[type=text], input[type=number] {
-    width: 45vw;
-    height: 8vh;
-    outline-color: rgba(0, 26, 255, 0.579);
+    width: 35vw;
+    height: 10vh;
+    outline-color: rgba(234, 241, 96, 0.579);
     padding: 0 1vw;
     border-radius: 1vw;
     margin-bottom: 5vh;
     border: none;
-    background-color: lightgoldenrodyellow;
-    color:rgba(0, 217, 255, 0.579);
+    background-color: rgb(157, 157, 157);
+    color: rgba(0, 0, 0, 0.779);
 }
 
 input[type=text]::placeholder, input[type=number]::placeholder {
-    color: rgba(0, 217, 255, 0.579);
+    color: rgb(0, 0, 0)
 }
 
 button {
-    height: 5vh;
-    width: 45vw;
-    border-radius: 1vw;
+    height: 7vh;
+    width: 15vw;
+    border-radius: 2vw;
     border: none;
     color: yellow;
     font-weight: bold;

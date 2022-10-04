@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create page</title>
-    <link rel="stylesheet" href="styles/edit.css">
+    <link rel="stylesheet" href="styles/create.css">
 </head>
 <body>
     <header>
-        <h1 onclick="toMainPage()">"YTour"</h1>
-        <h2 onclick="toEditPage()">Edit</h2>
+        <h1 onclick="toMainPage()">YTour</h1>
     </header>
     <main>
         <input type="text" placeholder="Write a name" id="nameField">
@@ -19,6 +18,7 @@
         <input type="text" placeholder="Write image link" id="imgField">
         <button onclick="createTour()">Create Tour</button>
     </main>
-    <script src="logic/edit.js"></script>
+    <div class="alert" onclick="hideAlert()"></div>
+    <script src="logic/create.js"></script>
 </body>
 </html>

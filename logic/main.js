@@ -27,7 +27,7 @@ function createTourElem(arr) {
             <img src="${element.image}" alt="">
             <h2>${element.name}</h2>
             <p>${element.price}$</p>
-            <p>${element.country}$</p>
+            <p>${element.country}</p>
             <div class="actions">  
                 <button class="edit" onclick="toEditPage(${element.id})">Edit</button>
                 <button class="delete" onclick="deleteTour(${element.id}, ${index++})">Delete</button>
@@ -96,11 +96,11 @@ function getTotalPrice(arr) {
 }
 
 async function deleteTour(id, index) {
-    fetch(`https://632b56441090510116d71181.mockapi.io/tours${id}`,{
+    fetch(`https://632b56441090510116d71181.mockapi.io/tours/${id}`,{
         method: 'DELETE'
     })  
     .then(res => {
-        if(res.ok) {
+        if(res.status === 200) {
             tours.splice(index, 1);
             document.querySelector('.content').replaceChildren();
             createTourElem(tours);

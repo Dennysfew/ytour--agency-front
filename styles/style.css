@@ -112,7 +112,7 @@ aside p span {
 
 .item {
     width: 20vw;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     border: 0.2vw solid rgba(0, 217, 255, 0.579);
