@@ -16,13 +16,13 @@ async function createTour() {
     let price = parseInt(document.querySelector('#priceField').value);
     let image = document.querySelector('#imgField').value;
     if (name && country && image && price >= 1) {
-        fetch('https://632b56441090510116d71181.mockapi.io/tours', {
+        fetch('http://localhost:8080/api/v1/tour', {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify({
-                'name': name,
+                'description': name,
                 'country': country,
                 'price': price,
                 'image': image

@@ -25,7 +25,7 @@ function createTourElem(arr) {
         document.querySelector('.content').innerHTML += `
         <div class="item">
             <img src="${element.image}" alt="">
-            <h2>${element.name}</h2>
+            <h2>${element.description}</h2>
             <p>${element.price}$</p>
             <p>${element.country}</p>
             <div class="actions">  
@@ -38,7 +38,7 @@ function createTourElem(arr) {
 } 
 
 async function getTours() {
-    fetch('https://632b56441090510116d71181.mockapi.io/tours')
+    fetch('http://localhost:8080/api/v1/tour')
         .then(res => res.json())
         .then(data => { 
             tours = data;
@@ -54,7 +54,7 @@ function searchTour() {
     let search = document.querySelector('#search').value;
     if (search) {
         let reg = new RegExp(`${search}`);
-        filterArr = tours.filter(element => reg.test(element.name) === true);
+        filterArr = tours.filter(element => reg.test(element.description) === true);
         document.querySelector('.content').replaceChildren();
         createTourElem(filterArr);
         getTotalPrice(filterArr);
@@ -96,7 +96,7 @@ function getTotalPrice(arr) {
 }
 
 async function deleteTour(id, index) {
-    fetch(`https://632b56441090510116d71181.mockapi.io/tours/${id}`,{
+    fetch(`http://localhost:8080/api/v1/tour/${id}`,{
         method: 'DELETE'
     })  
     .then(res => {

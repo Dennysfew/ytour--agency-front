@@ -17,10 +17,10 @@ function hideAlert() {
 }
 
 async function getTour(id) {
-    fetch(`https://632b56441090510116d71181.mockapi.io/tours/${id}`)
+    fetch(`http://localhost:8080/api/v1/tour/${id}`)
         .then(res => res.json())
         .then(data => {
-            tourName.value = data.name;
+            tourName.value = data.description;
             tourCountry.value = data.country;
             tourPrice.value = data.price;
             tourImage.value = data.image;
@@ -33,15 +33,15 @@ async function getTour(id) {
 
 async function updateTour() {
     if (tourName.value && tourCountry.value && tourImage.value && tourPrice.value >= 1) {
-        fetch(`https://632b56441090510116d71181.mockapi.io/tours/${tourId}`, {
+        fetch(`http://localhost:8080/api/v1/tour/update/${tourId}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify({
-                'name': tourName.value,
-                'country': tourCountry.value,
-                'price':  parseInt(tourPrice.value),
+                'description': tourName.value,
+                'country':tourCountry.value,
+                'price': tourPrice.value,
                 'image': tourImage.value
             })
         })
